@@ -5,6 +5,7 @@ public class LogicalPrograms {
         LogicalPrograms logic = new LogicalPrograms();
         logic.fibonacci();
         logic.perfectNumber();
+        logic.primeNumber();
     }
     public void fibonacci() {
         // Initialization Fibonacci Series {0,1,1,2,3,5,8...n}
@@ -43,6 +44,27 @@ public class LogicalPrograms {
             System.out.println(num + " is a Perfect Number");
         } else
             System.out.println(num + " is Not a Perfect Number");
+    }
+    public void primeNumber() {
+        // Get input from the user
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int number = sc.nextInt();
+
+        // find prime factors of given number using for loop
+        if (number > 2) {
+            for (int i = 2; i <= number; i++) {
+                while (number % i == 0) {
+                    System.out.println(i);
+                    number = number / i;
+                }
+            }
+        } else if (number == 0 || number == 1) {
+            System.out.println(" 0 and 1 are not counted as prime number");
+        } else if (number == 2) {
+            System.out.println("All even number can be divide by 2");
+            System.out.println("So 2 is only even prime number");
+        }
     }
 }
 
