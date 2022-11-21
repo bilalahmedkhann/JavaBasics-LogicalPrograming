@@ -6,6 +6,7 @@ public class LogicalPrograms {
         logic.fibonacci();
         logic.perfectNumber();
         logic.primeNumber();
+        logic.reverse();
     }
     public void fibonacci() {
         // Initialization Fibonacci Series {0,1,1,2,3,5,8...n}
@@ -65,6 +66,20 @@ public class LogicalPrograms {
             System.out.println("All even number can be divide by 2");
             System.out.println("So 2 is only even prime number");
         }
+    }
+    public void reverse() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number");
+        int num = sc.nextInt();
+        int rev = 0;
+        int remainder = 0;
+
+        while (num != 0) {
+            remainder = num % 10;
+            rev = rev * 10 + remainder;
+            num = num / 10;
+        }
+        System.out.println("" + rev);
     }
 }
 
